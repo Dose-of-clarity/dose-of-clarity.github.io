@@ -439,3 +439,10 @@ html.embed .dhero{padding-top:28px}
 html[data-theme=dark] .dm-box,html[data-theme=dark] .dm-fr{background:#0e1b2a}
 @media(max-width:600px){.dmodal{padding:0}.dm-box{border-radius:0;height:100%}.dm-full{display:none}}
 @media(prefers-reduced-motion:reduce){main#main,.layout,.dhero h1,.dhero:after,.dhero .wrap:after,.dbanner,.glance>*{animation:none!important}.dm-box,.dm-back,.dm-fr{transition:none}.dm-load i{animation:none}@view-transition{navigation:none}}
+
+@media(max-width:520px){
+.top .wrap{flex-wrap:wrap;height:auto;min-height:64px;padding:8px 14px 10px;row-gap:2px;column-gap:8px}
+.top nav{width:100%;display:flex;gap:16px;flex-wrap:wrap}
+.top nav a{margin-left:0;font-size:14px;padding:4px 0}
+.top nav .themebtn{margin-left:0}
+}
