@@ -61,7 +61,7 @@ var exact=r[0].s<=1.5;var head=document.createElement('li');head.className='hd';
 r.forEach(function(x){var li=document.createElement('li');li.setAttribute('role','option');var a=document.createElement('a');a.href='medicines/'+x.it.slug+'.html';a.textContent=x.it.name;li.appendChild(a);dd.appendChild(li)});dd.hidden=false}
 q.addEventListener('input',show);q.addEventListener('focus',show);
 document.addEventListener('click',function(e){if(!box.contains(e.target))hide()});
-q.addEventListener('keydown',function(e){if(e.key==='Escape')hide();if(e.key==='Enter'){var a=dd.querySelector('a');var v=q.value.trim().toLowerCase();var vis=cards.some(function(c){return c.style.display!=='none'});if(a&&!vis&&!dd.hidden){e.preventDefault();location.href=a.href}}});
+q.addEventListener('keydown',function(e){if(e.key==='Escape')hide();if(e.key==='Enter'){var a=dd.querySelector('a');var v=q.value.trim().toLowerCase();var vis=cards.some(function(c){return c.style.display!=='none'});if(a&&!vis&&!dd.hidden){e.preventDefault();hide();a.click()}}});
 /* if nothing matches as typed, show the close matches in the grid too */
 function grid(){var v=q.value.trim().toLowerCase();if(v.length<2)return;var any=cards.some(function(c){return c.style.display!=='none'});if(any)return;
 var ok=items.filter(function(it){return score(it,v)<99});if(!ok.length)return;cards.forEach(function(c){c.style.display=ok.some(function(it){return it.c===c})?'':'none'});var e=document.getElementById('empty');if(e)e.style.display='none';var n=document.getElementById('count');if(n)n.textContent='Showing '+ok.length+' close '+(ok.length===1?'match':'matches')}
